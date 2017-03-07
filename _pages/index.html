@@ -1,0 +1,20 @@
+---
+layout: default
+
+page-hidden: false
+page-name: main
+permalink: /
+
+title: Travel Gifs
+---
+
+{% assign sections = site.data.main.sections %}
+<section class="section000 intro">
+  <h1>Travel</h1>
+  <p>by <a href="http://carsonjon.es" target="_blank">Carson Jones</a></p>
+</section>
+<section class="section001 photos photos--london">
+  {% for img in site.data.main.sections[1].imgs %}
+    <div><img src="/assets/img/london/{{ img.src }}" alt=""></div>
+  {% endfor %}
+</section>

@@ -1,0 +1,96 @@
+body.main-page{
+  background: $black;
+  h1, h2, h3, h4, p{
+    color: $white;
+  }
+  section{
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  // Intro
+  .section000{
+    h1 {
+      border-bottom: solid 1px #e7e3df;
+    }
+    & > * {
+      display: inline;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  // London
+  .section001{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @mixin join-with-prev(){
+      margin-top: -40px;
+    }
+    @mixin scale($scale){
+      transform: scale($scale);
+    }
+    @mixin bottom(){
+      margin-bottom: 160px;
+    }
+    @mixin right(){
+      margin-left: auto;
+    }
+    @mixin center(){
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @mixin flip-horizontal(){
+      transform: scaleX(-1);
+      filter: FlipH;
+    }
+
+
+    & > div{
+      display: inline;
+      margin: 80px 0;
+      &:nth-of-type(1){
+        @include bottom;
+      }
+      &:nth-of-type(2){
+        @include right;
+      }
+      &:nth-of-type(3){
+        @include join-with-prev();
+      }
+      &:nth-of-type(4){
+        @include join-with-prev();
+        @include bottom();
+        @include scale(.5);
+        img{margin-top:-160px};
+      }
+      &:nth-of-type(5){
+        @include center();
+      }
+      &:nth-of-type(6){
+        // @include join-with-prev();
+        @include right();
+        @include flip-horizontal();
+      }
+      &:nth-of-type(7){
+        @include join-with-prev();
+        @include scale(.5);
+        img{
+          @include flip-horizontal();
+          margin-top:-160px;
+        };
+      }
+      &:nth-of-type(8){
+        @include center;
+        @include bottom;
+      }
+    }
+  }
+
+}
