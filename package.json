@@ -45,9 +45,7 @@
     "jquery-validation": "^1.15.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-svg": "^2.1.19"
-  },
-  "devDependencies": {
+    "react-svg": "^2.1.19",
     "autoprefixer": "^6.7.6",
     "babel-core": "6.11.4",
     "babel-loader": "^6.2.4",
